@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Level 1 Interactive Webpage demonstrating HTML5, CSS3, and Vanilla JavaScript features including dynamic greetings, color changing buttons, form validation, and a basic calculator.">
+    <title>Interactive Webpage | Level 1 Project</title>
+    
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation Bar -->
+    <header class="navbar-header">
+        <nav class="nav-container" aria-label="Main Navigation">
+            <div class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">DevLevel1</span>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <!-- Navigation Links (Exactly 3 links: Home, About, Contact) -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 2. HOME SECTION -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <!-- Dynamic Time Greeting Banner -->
+                    <div class="greeting-badge" id="greetingBadge">
+                        <span class="greeting-icon" id="greetingIcon">✨</span>
+                        <span id="greetingText" class="greeting-text">Good Morning!</span>
+                    </div>
+
+                    <h1 class="hero-title">Welcome to My Website</h1>
+                    <p class="hero-description">
+                        This is a beginner interactive webpage built using HTML, CSS, and JavaScript. 
+                        It demonstrates core frontend web development principles, responsive UI layouts, 
+                        and dynamic browser interactivity.
+                    </p>
+
+                    <!-- Interactive Hero Buttons -->
+                    <div class="hero-actions">
+                        <button id="colorChangeBtn" class="btn btn-primary color-btn">
+                            Change My Color
+                        </button>
+                        <button id="showGreetingBtn" class="btn btn-secondary">
+                            Show Greeting
+                        </button>
+                    </div>
+
+                    <!-- Live Time & Interactive Status indicator -->
+                    <div class="time-display-card">
+                        <span class="time-label">Current System Greeting:</span>
+                        <span id="currentTimeDisplay" class="time-value">Checking time...</span>
+                    </div>
+                </div>
+
+                <div class="hero-media">
+                    <div class="hero-image-wrapper">
+                        <img src="assets/hero-illustration.jpg" alt="Web Development Code and Interface Illustration" class="hero-image" width="600" height="450">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE FEATURES DEMO SECTION -->
+        <section class="interactive-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Interactive JavaScript Components</h2>
+                    <p class="section-subtitle">Test out real-time DOM manipulation, form validation, and arithmetic calculations below.</p>
+                </div>
+
+                <div class="interactive-grid">
+                    <!-- 3. BASIC FORM SECTION -->
+                    <div class="card form-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <h3>User Greeting Form</h3>
+                        </div>
+                        <p class="card-desc">Enter your name below to trigger a personalized JavaScript greeting message without refreshing the page.</p>
+
+                        <form id="userForm" class="custom-form" novalidate>
+                            <div class="form-group">
+                                <label for="nameInput">Enter your name</label>
+                                <input type="text" id="nameInput" class="form-input" placeholder="e.g. Sanjay" autocomplete="off">
+                                <span class="error-msg" id="nameError">Please enter a valid name.</span>
+                            </div>
+
+                            <button type="submit" id="formSubmitBtn" class="btn btn-accent btn-full">
+                                Submit
+                            </button>
+                        </form>
+
+                        <!-- Successful Submission Greeting Output -->
+                        <div id="formGreetingResult" class="result-box hidden" role="status">
+                            <span class="result-icon">👋</span>
+                            <span id="formGreetingText" class="result-text"></span>
+                        </div>
+                    </div>
+
+                    <!-- 5. BASIC CALCULATOR SECTION -->
+                    <div class="card calc-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                                    <line x1="8" y1="6" x2="16" y2="6"></line>
+                                    <line x1="16" y1="14" x2="16" y2="18"></line>
+                                    <path d="M16 10h.01"></path>
+                                    <path d="M12 10h.01"></path>
+                                    <path d="M8 10h.01"></path>
+                                    <path d="M12 14h.01"></path>
+                                    <path d="M8 14h.01"></path>
+                                    <path d="M12 18h.01"></path>
+                                    <path d="M8 18h.01"></path>
+                                </svg>
+                            </div>
+                            <h3>Basic Addition Calculator</h3>
+                        </div>
+                        <p class="card-desc">Input two numbers to compute their sum using JavaScript arithmetic functions.</p>
+
+                        <div class="calc-form">
+                            <div class="form-group">
+                                <label for="firstNumber">First Number:</label>
+                                <input type="number" id="firstNumber" class="form-input" placeholder="e.g. 10" step="any">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="secondNumber">Second Number:</label>
+                                <input type="number" id="secondNumber" class="form-input" placeholder="e.g. 20" step="any">
+                            </div>
+
+                            <span class="error-msg" id="calcError">Please enter valid numbers in both fields.</span>
+
+                            <button id="addNumbersBtn" class="btn btn-primary btn-full">
+                                Add Numbers
+                            </button>
+
+                            <!-- Calculator Result Display -->
+                            <div id="calcResult" class="result-box calc-result-box hidden" role="status">
+                                <span class="result-label">Result:</span>
+                                <span id="calcResultValue" class="result-value">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. ABOUT SECTION -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About This Project</h2>
+                    <p class="about-lead">
+                        This webpage demonstrates basic HTML structure, CSS styling, and JavaScript interactivity.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="concept-card">
+                        <div class="concept-badge">01</div>
+                        <h4>HTML Elements</h4>
+                        <p>Semantic tags like header, nav, main, section, footer, form, input, and label elements.</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="concept-badge">02</div>
+                        <h4>CSS Styling</h4>
+                        <p>Responsive flexbox & grid layouts, CSS custom variables, smooth transitions, and glassmorphism styling.</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="concept-badge">03</div>
+                        <h4>Navigation</h4>
+                        <p>Sticky desktop header, mobile responsive hamburger menu, and smooth scrolling section links.</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="concept-badge">04</div>
+                        <h4>Forms</h4>
+                        <p>User input collection, client-side validation, and instant in-page DOM response handling.</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="concept-badge">05</div>
+                        <h4>JavaScript Events</h4>
+                        <p>Non-inline event listeners utilizing <code>addEventListener</code> for click and submit actions.</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="concept-badge">06</div>
+                        <h4>Conditional Statements</h4>
+                        <p>Dynamic decision logic evaluating time ranges and validating numerical/text form inputs.</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="concept-badge">07</div>
+                        <h4>Date and Time</h4>
+                        <p>Utilizing JS <code>Date</code> object methods to compute hours and show appropriate time greetings.</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="concept-badge">08</div>
+                        <h4>DOM Manipulation</h4>
+                        <p>Updating text content, dynamic class toggles, and modifying inline styles smoothly.</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="concept-badge">09</div>
+                        <h4>Basic Arithmetic</h4>
+                        <p>Parsing numerical strings and computing addition with full input validation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CONTACT SECTION -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p class="section-subtitle">Feel free to reach out to us with any questions or inquiries.</p>
+                </div>
+
+                <div class="contact-cards-grid">
+                    <!-- Email Card -->
+                    <div class="contact-card">
+                        <div class="contact-icon-wrapper">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Email</h3>
+                        <p class="contact-info"><a href="mailto:example@email.com">example@email.com</a></p>
+                    </div>
+
+                    <!-- Phone Card -->
+                    <div class="contact-card">
+                        <div class="contact-icon-wrapper">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <h3>Phone</h3>
+                        <p class="contact-info"><a href="tel:+919876543210">+91 98765 43210</a></p>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div class="contact-card">
+                        <div class="contact-icon-wrapper">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>Location</h3>
+                        <p class="contact-info">Chennai, India</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Interactive Webpage Project. Built with HTML5, CSS3 &amp; Vanilla JavaScript.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
